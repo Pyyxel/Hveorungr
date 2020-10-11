@@ -14,10 +14,12 @@ class CreateElevesTable extends Migration
     public function up()
     {
         Schema::create('eleve', function (Blueprint $table) {
-            $table->id('id_eleve');
+            $table->bigIncrements('id');
             $table->string('nom');
             $table->string('prenom');
             $table->string('numero_etudiant');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

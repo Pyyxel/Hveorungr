@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Enseignant extends Model
 {
     public function Groupe(){
-        return $this->belongsToMany('App\Models\Groupe');
+        return $this->belongsToMany(Groupe::class,'enseignant_groupes');
     }
 }

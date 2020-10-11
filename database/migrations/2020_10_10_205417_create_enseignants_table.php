@@ -13,10 +13,12 @@ class CreateEnseignantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('enseignant', function (Blueprint $table) {
-            $table->id('id_enseignant');
+        Schema::create('enseignants', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('nom');
             $table->string('prenom');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateEnseignantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enseignant');
+        Schema::dropIfExists('enseignants');
     }
 }

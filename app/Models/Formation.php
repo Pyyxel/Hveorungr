@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Groupe;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Formation extends Model
 {
     public function Groupe(){
-        return $this->hasMany('App\Models\Groupe');
+        return $this->hasMany(Groupe::class);
     }
 }

@@ -14,8 +14,12 @@ class CreateGroupesTable extends Migration
     public function up()
     {
         Schema::create('groupe', function (Blueprint $table) {
-            $table->id('id_groupe');
+            $table->bigIncrements('id');
             $table->string('type');
+            $table->bigInteger('formation_id')->unsigned();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
         });
     }
 

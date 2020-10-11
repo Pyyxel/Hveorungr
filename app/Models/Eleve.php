@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Eleve extends Model
 {
+   protected $table="eleve";
+
+
    public function groupe(){
-        return $this->belongsToMany('App\Models\Groupe');
+        return $this->belongsToMany(Groupe::class, 'eleve_groupes');
    }
 
 }

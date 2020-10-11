@@ -13,9 +13,11 @@ class CreateFormationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('formation', function (Blueprint $table) {
-            $table->id('id_formation');
+        Schema::create('formations', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('diplome');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -26,6 +28,6 @@ class CreateFormationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formation');
+        Schema::dropIfExists('formations');
     }
 }
