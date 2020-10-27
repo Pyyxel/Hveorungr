@@ -15,11 +15,11 @@ class CreateEnseignantGroupesTable extends Migration
     {
         Schema::create('enseignant_groupes', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('enseignant_id')->unsigned();
             $table->bigInteger('groupe_id')->unsigned();
+            $table->bigInteger('enseignant_id')->unsigned();
             $table->timestamps();
-            $table->foreign('enseigant_id')->references('id')->on('enseignants')->onDelete('cascade');
-            $table->foreign('groupe_id')->references('id')->on('groupe')->onDelete('cascade');         
+            $table->foreign('groupe_id')->references('id')->on('groupe')->onDelete('cascade'); 
+            $table->foreign('enseignant_id')->references('id')->on('enseignants')->onDelete('cascade');        
         });
     }
     /**

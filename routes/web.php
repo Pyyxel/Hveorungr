@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\test;
+use App\Http\Controllers\index;
+use App\Http\Controllers\listeGroupe;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test',[test::class,'addGroupe']);
+Route::get('/index',[index::class,'index']);
+
+Route::get('/formation/{idFormation}',[listeGroupe::class,'listGroupe']);
